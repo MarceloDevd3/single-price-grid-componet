@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+:root {
+--Cyan: hsl(179, 62%, 43%);
+--Bright-Yellow: hsl(71, 73%, 54%);
+--Light-Gray: hsl(204, 43%, 93%);
+--Grayish-Blue: hsl(218, 22%, 67%);
+}
+
+body {
+    background-color: var(--Light-Gray);
+    font-size: 1rem;
+    font-family: 'Karla', sans-serif;
+}
+
+
+button {
+    width: 100%;
+    height: 25%;
+    border: none;
+    cursor: pointer;
+    margin-top: 2em;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+
+.btn-color {
+    color: #fff;
+    background-color: var(--Bright-Yellow);
+}
+
+button:hover,
+button:active {
+    opacity: 0.89;
+}
+
+h1, h3, h4 {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    color: var(--Cyan);
+}
+
+h2 {
+    color: var(--Bright-Yellow);
+}
+
+.gray-color {
+    color: var(--Light-Gray);
+}
+
+.light-txt {
+    color: var(--Grayish-Blue);
+}
+
+p {
+    margin: 1.1em 0;
+    font-size: 0.90em;
+    line-height: 1.5em;
+}
+
+.space {
+    padding: 1.5em 1.2em;
+}
+.space-1 {
+    padding: 2em;
+}
+
+.space-1 p {
+    width: 75%;
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'header' 'aside' 'aside-area';
+    width: 330px;
+    height: 730px;
+    margin: 6% auto;
+}
+
+
+
+
+.large {
+    grid-area: header;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 7px 7px 0 0;
+}
+
+.large p {
+    color: var(--Grayish-Blue);
+}
+
+h3 , h4 {
+    color: #fff;
+}
+
+.small-0 {
+    grid-area: aside;
+    height: 250px;
+    background-color: var(--Cyan);
+}
+
+.small-0 p {
+    padding: 0;
+    font-size: 1.1em;
+}
+
+strong {
+    font-size: 1.7em;
+}
+
+.small-1{
+    grid-area: aside-area;
+    height: 250px;
+    background-color: #4abebd;
+    border-radius: 0 0 7px 7px;
+}
+
+
+
+
+
+@media (min-width: 900px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 'header header header header' 
+        'aside  aside aside-area aside-area' ;
+        width: 636px;
+        height: 482px;
+    }
+
+    
+
+    .large {
+        grid-area: header;
+        height: 200px;
+    }
+
+    .large p {
+      width: 80%;
+    }
+    
+    .small-0 {
+        grid-area: aside;
+        border-radius: 0 0 0 7px;
+    }
+    
+    .small-1{
+        grid-area: aside-area;
+        border-radius: 0 0 7px 0;
+    }
+
+    h2 {
+        margin: 1.5em 0;
+    }
+}
+
+
+@media (min-width: 1440px){
+    .grid-container {
+        margin: 15% auto;
+    } 
+    .grid-container:hover {
+        transform: scale(1.1);
+        transition-duration: 3s;
+    }
+}
